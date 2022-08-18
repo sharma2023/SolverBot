@@ -1,0 +1,6 @@
+Flask
+gunicorn
+line-bot-sdk
+imgurpython
+Jinja2
+wolframalpha
