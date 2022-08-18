@@ -3,6 +3,11 @@
 ### TOKENS
 SECRETS and TOKENS in .env
 
+LINE_CHANNEL_ACCESS_TOKEN=
+LINE_CHANNEL_SECRET=
+DEEPL_API_KEY=
+WOLFRAM_KEY=
+
 ### Deploy
 ```
 python app.py

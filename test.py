@@ -17,20 +17,32 @@
 import requests
 import os
 
-API_KEY = os.getenv("DEEPL_API_KEY")
+# API_KEY = os.getenv("DEEPL_API_KEY")
 
-text = "Riemann Zeta function is a very important function in number theory."
-source_lang = 'EN'
-target_lang = 'JA'
+# text = "Riemann Zeta function is a very important function in number theory."
+# source_lang = 'EN'
+# target_lang = 'JA'
 
-params = {
-            'auth_key' : API_KEY,
-            'text' : text,
-            'source_lang' : source_lang,
-            "target_lang": target_lang 
-        }
+# params = {
+#             'auth_key' : API_KEY,
+#             'text' : text,
+#             'source_lang' : source_lang,
+#             "target_lang": target_lang 
+#         }
 
-request = requests.post("https://api-free.deepl.com/v2/translate", data=params)
-result = request.json()
+# request = requests.post("https://api-free.deepl.com/v2/translate", data=params)
+# result = request.json()
 
-print(result['translations'][0]['text'])
+# print(result['translations'][0]['text'])
+
+# https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=2b4f975c75727602&lat=35.685919835030944&lng=139.69470944396042
+
+import json
+from xml.etree import ElementTree
+import xmltodict
+
+request = requests.post("https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=2b4f975c75727602&lat=35.685919835030944&lng=139.69470944396042")
+
+dict_data = xmltodict.parse(request.content)
+
+print(dict_data)
